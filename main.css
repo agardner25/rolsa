@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+body {
+    background-color: #160023;
+    font-family: 'Arial', sans-serif;
+}
+
+button {
+    background-color: #39005C;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #1F0032;
+}
+
+input[type=text], input[type=password], input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #160023;
+  box-sizing: border-box;
+  background-color: #3b3b3b;
+}
+
+.redirect {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    background: #2C0047; 
+    background-blend-mode: darken;
+    background-size: cover;
+    color: white;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    display: flex;
+    margin-right: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list li .logo{
+    margin: 0 50px 0 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 36px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a {
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 26px;
+    text-decoration: none;
+}
+
+.nav-list li:hover {
+    background-color: #160023;
+}
+
+.error {
+    width: 92%; 
+    margin: 0px auto 16px auto; 
+    padding: 16px; 
+    border: 1px solid #a94442; 
+    color: #a94442; 
+    background: #f2dede; 
+    border-radius: 5px; 
+    text-align: left;
+
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-container {
+    background-color: #2C0047;
+    border-radius: 10px;
+    margin: 50px auto 0 auto;
+    padding: 20px 10%;
+    width: 400px;
+    height: auto;
+    color: white;
+}
+
+.container {
+    padding: 16px;
+    color: white;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2C0047;
+    color: white;
+    text-align: center;
+}
+
