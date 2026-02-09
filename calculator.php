@@ -36,10 +36,18 @@
         
         echo "<div class='results'>";
         echo "<h2>Your Monthly Carbon Footprint</h2>";
+        echo "<div class='result-item'>";
         echo "<p>Electricity: <span class='result-value'>" . round($electricity, 2) . " kg CO2</span></p>";
+        echo "</div>";
+        echo "<div class='result-item'>";
         echo "<p>Gas: <span class='result-value'>" . round($gas, 2) . " kg CO2</span></p>";
+        echo "</div>";
+        echo "<div class='result-item'>";
         echo "<p>Driving: <span class='result-value'>" . round($driving, 2) . " kg CO2</span></p>";
-        echo "<p class='total'><strong>Total: " . round($total, 2) . " kg CO2</strong></p>";
+        echo "</div>";
+        echo "<div class='result-total'>";
+        echo "<p><strong>Total: " . round($total, 2) . " kg CO2</strong></p>";
+        echo "</div>";
         echo "</div>";
     }
     ?>
