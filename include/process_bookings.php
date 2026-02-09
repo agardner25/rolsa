@@ -9,7 +9,7 @@ $errors = array();
 if (isset($_POST['book_service'])) {
     
     $user_id = $_SESSION['user_id'] ?? '';
-    $service = $_POST['service'] ?? '';
+    $service_id = $_POST['service'] ?? '';
     $booking_date = $_POST['booking_date'] ?? '';
     
     if (empty($user_id)) { array_push($errors, "You must be logged in to book"); }
@@ -19,7 +19,7 @@ if (isset($_POST['book_service'])) {
     // Runs if there are no errors
     if (count($errors) == 0) {
         $query_insert_booking = "INSERT INTO bookings (service_id, user_id, time) 
-                VALUES('$username', '$service', '$booking_date', '$notes')";
+                VALUES('$service_id', '$user_id', '$booking_date')";
         
         // Runs insertion query
         if ($conn->query($query_insert_booking) === TRUE) {
