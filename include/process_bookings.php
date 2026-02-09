@@ -31,9 +31,10 @@ if (isset($_POST['book_service'])) {
     }
 }
 
-?>
 else {
     foreach ($errors as $error) {
         echo "<div class='container'><p class='error'>$error</p></div>";
     }
 }
+
+?>
