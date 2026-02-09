@@ -37,7 +37,7 @@
 
         <div style="margin-bottom: 16px;">
             <label for="booking_date" style="display: block; margin-bottom: 8px; font-weight: bold;">Select Date & Time:</label>
-            <input type="datetime" name="booking_date" id="booking_date" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b;">
+            <input type="datetime-local" name="booking_date" id="booking_date" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b;">
         </div>
 
         <button type="submit" name="book_service">Book Service</button>
