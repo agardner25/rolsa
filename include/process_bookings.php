@@ -8,18 +8,17 @@ $errors = array();
 // Runs if user has submitted the "booking" form
 if (isset($_POST['book_service'])) {
     
-    $username = $_SESSION['username'] ?? '';
+    $user_id = $_SESSION['user_id'] ?? '';
     $service = $_POST['service'] ?? '';
     $booking_date = $_POST['booking_date'] ?? '';
-    $notes = $_POST['notes'] ?? '';
     
-    if (empty($username)) { array_push($errors, "You must be logged in to book"); }
+    if (empty($user_id)) { array_push($errors, "You must be logged in to book"); }
     if (empty($service)) { array_push($errors, "Service is required"); }
     if (empty($booking_date)) { array_push($errors, "Booking date is required"); }
     
     // Runs if there are no errors
     if (count($errors) == 0) {
-        $query_insert_booking = "INSERT INTO bookings (username, service, booking_date, notes) 
+        $query_insert_booking = "INSERT INTO bookings (service_id, user_id, time) 
                 VALUES('$username', '$service', '$booking_date', '$notes')";
         
         // Runs insertion query
