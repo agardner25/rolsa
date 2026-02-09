@@ -21,7 +21,8 @@ if ($_SESSION['username'] == '') : ?>
             <li><a href="index.php">Green Products</a></li>
             <li><a href="index.php">Carbon footprint</a></li>
             <li><a href="index.php">Services and consultations</a></li>
-            <li><a href="logout.php">My dashboard</a></li>
+            <li><a href="index.php">My dashboard</a></li>
+            <li><a href="logout.php">Log Out</a></li>
         </ul>
     </nav>
     
