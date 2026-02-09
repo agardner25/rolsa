@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/antona/public_html/
+    - export DEPLOYPATH=/home/antona/public_html/Rolsa
     - /bin/rsync -av --delete --exclude='.git' ./ $DEPLOYPATH
