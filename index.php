@@ -10,7 +10,7 @@
 <body>
 <?php include('navbar.php') ?>
 <div class="container">
-    <h1>Home</h1>
+    <h1>Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
 </div>
 </body>
 </html>
