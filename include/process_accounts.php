@@ -25,7 +25,7 @@ if (isset($_POST['login_user'])) {
         
         if ($result->num_rows == 1) {
             $_SESSION['username'] = $username;
-            $_SESSION['user_id'] = $result->fetch_assoc()['user_id'];
+            $_SESSION['user_id'] = $result->fetch_assoc()['id'];
             header('location: index.php');
             
         } else {
