@@ -11,26 +11,31 @@
 <?php include('include/navbar.php') ?>
 <div class="container">
     <h1>Services and Consultations</h1>
-    <?php include('include/process_bookings.php') ?>
-    <label for="service">Service:</label>
-    <select id="service" name="service" required>
-        <option value="">Select a service</option>
-        <option value="solar_panels">Solar Panels Fitting</option>
-        <option value="ev_charging">Electric Vehicle Charging Station Fitting</option>
-        <option value="energy_audit">Green Energy Audit</option>
-        <option value="battery_storage">Battery Storage Installation</option>
-    </select>
-    <form method="POST" action="include/process_bookings.php">
-        <div class="form-group">
-            <label for="service">Service:</label>
-            <input type="text" id="service" name="service" required>
-        </div>
-        <div class="form-group">
-            <label for="booking_date">Date:</label>
-            <input type="datetime-local" id="booking_date" name="booking_date" required>
-        </div>
-        <button type="submit" name="book_service">Book Service</button>
-    </form>
+
 </div>
 </body>
 </html>
+<div class="container">
+    <h2>Book a Service</h2>
+    <form method="POST" action="include/process_bookings.php">
+        <label for="service">Select a Service:</label>
+        <select name="service" id="service" required>
+            <option value="">Choose a service...</option>
+            <?php
+            $query = "SELECT service_id, service_name, description FROM services";
+            $result = $conn->query($query);
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='" . $row['service_id'] . "'>" . $row['service_name'] . " - " . $row['description'] . "</option>";
+            }
+            ?>
+        </select>
+
+        <label for="booking_date">Select Date & Time:</label>
+        <input type="datetime-local" name="booking_date" id="booking_date" required>
+
+        <label for="notes">Notes (Optional):</label>
+        <textarea name="notes" id="notes"></textarea>
+
+        <button type="submit" name="book_service">Book Service</button>
+    </form>
+</div>
