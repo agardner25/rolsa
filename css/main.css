@@ -125,3 +125,65 @@ input[type=text], input[type=password], input[type=email]{
     text-align: center;
 }
 
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-group input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #160023;
+    box-sizing: border-box;
+    background-color: #3b3b3b;
+    color: white;
+    border-radius: 5px;
+}
+
+.form-group input[type=number]:focus {
+    outline: none;
+    border: 1px solid #39005C;
+    background-color: #4a4a4a;
+}
+
+.results {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2C0047;
+    border-radius: 10px;
+    border-left: 4px solid #39005C;
+}
+
+.result-item {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #160023;
+    border-radius: 5px;
+}
+
+.result-value {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.result-total {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #39005C;
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+}

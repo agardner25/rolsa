@@ -10,23 +10,7 @@
 <body>
 <?php include('include/navbar.php') ?>
 <div class="container">
-    <h1>Carbon Footprint Calculator</h1>
-    <form method="POST" action="">
-        <div class="form-group">
-            <label for="electricity">Monthly Electricity Usage (kWh):</label>
-            <input type="number" id="electricity" name="electricity" step="0.01" required>
-        </div>
-        <div class="form-group">
-            <label for="gas">Monthly Gas Usage (therms):</label>
-            <input type="number" id="gas" name="gas" step="0.01" required>
-        </div>
-        <div class="form-group">
-            <label for="driving">Monthly Driving (miles):</label>
-            <input type="number" id="driving" name="driving" step="0.1" required>
-        </div>
-        <button type="submit" name="calculate">Calculate Footprint</button>
-    </form>
-    <?php
+
     if (isset($_POST['calculate'])) {
         $electricity = floatval($_POST['electricity']) * 0.92;
         $gas = floatval($_POST['gas']) * 5.3;
