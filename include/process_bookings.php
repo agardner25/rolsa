@@ -1,0 +1,39 @@
+<?php
+session_start();
+include ('connect.php');
+
+// Hoisting
+$errors = array();
+
+// Runs if user has submitted the "booking" form
+if (isset($_POST['book_service'])) {
+    
+    $username = $_SESSION['username'] ?? '';
+    $service = $_POST['service'] ?? '';
+    $booking_date = $_POST['booking_date'] ?? '';
+    $notes = $_POST['notes'] ?? '';
+    
+    if (empty($username)) { array_push($errors, "You must be logged in to book"); }
+    if (empty($service)) { array_push($errors, "Service is required"); }
+    if (empty($booking_date)) { array_push($errors, "Booking date is required"); }
+    
+    // Runs if there are no errors
+    if (count($errors) == 0) {
+        $query_insert_booking = "INSERT INTO bookings (username, service, booking_date, notes) 
+                VALUES('$username', '$service', '$booking_date', '$notes')";
+        
+        // Runs insertion query
+        if ($conn->query($query_insert_booking) === TRUE) {
+            echo "<div class='container'><p>Booking created successfully. <a href='bookings.php'>View your bookings</a></p></div>";
+        } else {
+            echo "Error: " . $conn->error;
+        }
+    }
+}
+
+?>
+else {
+    foreach ($errors as $error) {
+        echo "<div class='container'><p class='error'>$error</p></div>";
+    }
+}
