@@ -18,23 +18,29 @@
 <div class="container">
     <h2>Book a Service</h2>
     <form method="POST" action="include/process_bookings.php">
-        <label for="service">Select a Service:</label>
-        <select name="service" id="service" required>
-            <option value="">Choose a service...</option>
-            <?php
-            $query = "SELECT service_id, service_name, description FROM services";
-            $result = $conn->query($query);
-            while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['service_id'] . "'>" . $row['service_name'] . " - " . $row['description'] . "</option>";
-            }
-            ?>
-        </select>
+        <div style="margin-bottom: 16px;">
+            <label for="service" style="display: block; margin-bottom: 8px; font-weight: bold;">Select a Service:</label>
+            <select name="service" id="service" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b; color: white;">
+                <option value="">Choose a service...</option>
+                <?php
+                $query = "SELECT service_id, service_name, description FROM services";
+                $result = $conn->query($query);
+                while ($row = $result->fetch_assoc()) {
+                    echo "<option value='" . $row['service_id'] . "'>" . $row['service_name'] . " - " . $row['description'] . "</option>";
+                }
+                ?>
+            </select>
+        </div>
 
-        <label for="booking_date">Select Date & Time:</label>
-        <input type="datetime-local" name="booking_date" id="booking_date" required>
+        <div style="margin-bottom: 16px;">
+            <label for="booking_date" style="display: block; margin-bottom: 8px; font-weight: bold;">Select Date & Time:</label>
+            <input type="datetime-local" name="booking_date" id="booking_date" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b;">
+        </div>
 
-        <label for="notes">Notes (Optional):</label>
-        <textarea name="notes" id="notes"></textarea>
+        <div style="margin-bottom: 16px;">
+            <label for="notes" style="display: block; margin-bottom: 8px; font-weight: bold;">Notes (Optional):</label>
+            <textarea name="notes" id="notes" style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b; color: white; font-family: 'Arial', sans-serif; resize: vertical;"></textarea>
+        </div>
 
         <button type="submit" name="book_service">Book Service</button>
     </form>
