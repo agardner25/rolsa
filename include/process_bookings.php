@@ -18,7 +18,7 @@ if (isset($_POST['book_service'])) {
     
     // Runs if there are no errors
     if (count($errors) == 0) {
-        $query_insert_booking = "INSERT INTO bookings (service_id, user_id, time) 
+        $query_insert_booking = "INSERT INTO bookings (service_id, user_id, 'time') 
                 VALUES('$service_id', '$user_id', '$booking_date')";
         
         // Runs insertion query
@@ -35,5 +35,4 @@ else {
         echo "<div class='container'><p class='error'>$error</p></div>";
     }
 }
-
 ?>
