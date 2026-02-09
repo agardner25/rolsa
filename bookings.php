@@ -15,7 +15,7 @@
 
 <div class="container">
     <h2>Book a Service</h2>
-    <form method="POST" action="include/process_bookings.php">
+    <form method="POST" action="">
         <div style="margin-bottom: 16px;">
             <label for="service" style="display: block; margin-bottom: 8px; font-weight: bold;">Select a Service:</label>
             <select name="service" id="service" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #160023; box-sizing: border-box; background-color: #3b3b3b; color: white;">
