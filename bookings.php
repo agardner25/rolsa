@@ -20,23 +20,15 @@
         <option value="energy_audit">Green Energy Audit</option>
         <option value="battery_storage">Battery Storage Installation</option>
     </select>
-
     <form method="POST" action="include/process_bookings.php">
         <div class="form-group">
             <label for="service">Service:</label>
             <input type="text" id="service" name="service" required>
         </div>
-        
         <div class="form-group">
-            <label for="booking_date">Booking Date:</label>
+            <label for="booking_date">Date:</label>
             <input type="datetime-local" id="booking_date" name="booking_date" required>
         </div>
-        
-        <div class="form-group">
-            <label for="notes">Notes:</label>
-            <textarea id="notes" name="notes" rows="4"></textarea>
-        </div>
-        
         <button type="submit" name="book_service">Book Service</button>
     </form>
 </div>
