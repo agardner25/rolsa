@@ -20,10 +20,6 @@ if (isset($_POST['login_user'])) {
     if (count($errors) == 0) {
         
         $password = md5($password);
-        
-        echo "<span style='color:white'> $username ";
-        echo " ";
-        echo " $password </span>";
         $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
         $result = $conn->query($sql);
         
