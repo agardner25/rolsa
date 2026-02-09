@@ -28,18 +28,18 @@
     </form>
     <?php
     if (isset($_POST['calculate'])) {
-        $electricity = floatval($_POST['electricity']) * 0.92; // kg CO2 per kWh
-        $gas = floatval($_POST['gas']) * 5.3; // kg CO2 per therm
-        $driving = floatval($_POST['driving']) * 0.41; // kg CO2 per mile
+        $electricity = floatval($_POST['electricity']) * 0.92;
+        $gas = floatval($_POST['gas']) * 5.3;
+        $driving = floatval($_POST['driving']) * 0.41;
         
         $total = $electricity + $gas + $driving;
         
         echo "<div class='results'>";
         echo "<h2>Your Monthly Carbon Footprint</h2>";
-        echo "<p>Electricity: " . round($electricity, 2) . " kg CO2</p>";
-        echo "<p>Gas: " . round($gas, 2) . " kg CO2</p>";
-        echo "<p>Driving: " . round($driving, 2) . " kg CO2</p>";
-        echo "<p><strong>Total: " . round($total, 2) . " kg CO2</strong></p>";
+        echo "<p>Electricity: <span class='result-value'>" . round($electricity, 2) . " kg CO2</span></p>";
+        echo "<p>Gas: <span class='result-value'>" . round($gas, 2) . " kg CO2</span></p>";
+        echo "<p>Driving: <span class='result-value'>" . round($driving, 2) . " kg CO2</span></p>";
+        echo "<p class='total'><strong>Total: " . round($total, 2) . " kg CO2</strong></p>";
         echo "</div>";
     }
     ?>
