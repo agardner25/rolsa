@@ -1,21 +1,21 @@
-<?php include ('process_accounts.php') ?>
+<?php include ('include/process_accounts.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Signup</title>
 </head>
 <body>
-<?php include ('navbar.php') ?>
+<?php include ('include/navbar.php') ?>
 
 <div class="main-container">
     <div class="login-container">
         <div class="container"><h1>Sign Up</h1></div>
         <div class="container">
             <form class="register" method="post">
-                <?php include('errors.php') ?>
+                <?php include('include/errors.php') ?>
                 <label for="email"><b>Email</b></label>
                 <input type="email" placeholder="Enter Email" name="email"><br><br>
                 <label for="uname"><b>Username</b></label>
