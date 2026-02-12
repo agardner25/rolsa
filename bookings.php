@@ -1,6 +1,6 @@
 <?php 
 include('include/server.php');
-include('include/process_accounts.php'); ?>
+include('include/process_bookings.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
