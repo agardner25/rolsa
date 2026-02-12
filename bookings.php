@@ -1,4 +1,6 @@
-<?php include('include/server.php') ?>
+<?php 
+include('include/server.php')
+include('include/process_accounts.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
