@@ -1,6 +1,6 @@
 <?php 
-include('include/server.php')
-include('include/process_accounts.php') ?>
+include('include/server.php');
+include('include/process_accounts.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
