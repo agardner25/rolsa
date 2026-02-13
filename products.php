@@ -10,7 +10,35 @@
 <body>
 <?php include('include/navbar.php') ?>
 <div class="container">
-    <h1>Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+    <h1>Green energy products</h1>
 </div>
+<?php
+// Query products table
+$sql = "SELECT id, name, description, price, image_url FROM products ORDER BY name ASC";
+if ($stmt = $db->prepare($sql)) {
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    echo '<div class="products-grid">';
+
+    while ($row = $result->fetch_assoc()) {
+        $id = (int) $row['id'];
+        $name = htmlspecialchars($row['name']);
+        $description = nl2br(htmlspecialchars($row['description']));
+        echo '<article class="product-tile">';
+        echo '  <a class="product-link" href="product.php?id=' . $id . '">';
+        echo '    <h2 class="product-name">' . $name . '</h2>';
+        echo '  </a>';
+        echo '  <p class="product-desc">' . $description . '</p>';
+        echo '</article>';
+    }
+
+    echo '</div>';
+
+    $stmt->close();
+} else {
+    echo '<p class="error">Unable to load products.</p>';
+}
+?>
 </body>
 </html>
