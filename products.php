@@ -14,7 +14,7 @@
 </div>
 <?php
 // Query products table
-$sql = "SELECT id, name, description, price, image_url FROM products ORDER BY name ASC";
+$sql = "SELECT product_id, name, description FROM products ORDER BY name ASC";
 if ($stmt = $db->prepare($sql)) {
     $stmt->execute();
     $result = $stmt->get_result();
@@ -22,7 +22,7 @@ if ($stmt = $db->prepare($sql)) {
     echo '<div class="products-grid">';
 
     while ($row = $result->fetch_assoc()) {
-        $id = (int) $row['id'];
+        $id = (int) $row['product_id'];
         $name = htmlspecialchars($row['name']);
         $description = nl2br(htmlspecialchars($row['description']));
         echo '<article class="product-tile">';
