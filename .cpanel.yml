@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/antona/public_html/repos/
+    - export DEPLOYPATH=/home/antona/public_html/repos/rolsa
     - /bin/rsync -av --delete --exclude='.git' ./ $DEPLOYPATH
     - /usr/bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} \;
     - /usr/bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} \;
